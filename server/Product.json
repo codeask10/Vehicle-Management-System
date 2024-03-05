@@ -1,0 +1,138 @@
+[
+    {
+        "productName": "Widget A",
+        "quantity": 100,
+        "poNumber": "PO001001",
+        "vendorID":1,        
+        "category": "Electronics",
+        "price": 19.99
+    },
+    {
+        "productName": "Gadget B",
+        "quantity": 50,
+        "poNumber": "PO001002", 
+        "vendorID":1,
+        "category": "Accessories",
+        "price": 29.99
+    },
+    {
+        "productName": "Tool C",
+        "quantity": 200,
+        "poNumber": "PO001003",
+        "vendorID":2,
+        "category": "Hardware",
+        "price": 12.99
+    },
+    {
+        "productName": "Device D",
+        "quantity": 75,
+        "poNumber": "PO001004",
+        "vendorID":2,
+        "category": "Electronics",
+        "price": 49.99
+    },
+    {
+        "productName": "Appliance E",
+        "quantity": 30,
+        "poNumber": "PO00105",
+        "vendorID":3,
+        "category": "Home",
+        "price": 99.99
+    },
+    {
+        "productName": "Accessory F",
+        "quantity": 150,
+        "poNumber": "PO001006",
+        "vendorID":3,
+        "category": "Fashion",
+        "price": 9.99
+    },
+    {
+        "productName": "Tool G",
+        "quantity": 80,
+        "poNumber": "PO001007",
+        "vendorID":4,
+        "category": "Hardware",
+        "price": 15.99
+    },
+    {
+        "productName": "Gadget H",
+        "quantity": 45,
+        "poNumber": "PO001008",
+        "vendorID":4,
+        "category": "Accessories",
+        "price": 39.99
+    },
+    {
+        "productName": "Widget I",
+        "quantity": 120,
+        "poNumber": "PO001009",
+        "vendorID":5,
+        "category": "Electronics",
+        "price": 24.99
+    },
+    {
+        "productName": "Appliance J",
+        "quantity": 25,
+        "poNumber": "PO001010",
+        "vendorID":5,
+        "category": "Home",
+        "price": 129.99
+    },
+    {
+        "productName": "Accessory K",
+        "quantity": 100,
+        "poNumber": "PO001011",
+        "vendorID":1,
+        "category": "Fashion",
+        "price": 7.99
+    },
+    {
+        "productName": "Device L",
+        "quantity": 60,
+        "poNumber": "PO001012",
+        "vendorID":2,
+        "category": "Electronics",
+        "price": 44.99
+    },
+    {
+        "productName": "Tool M",
+        "quantity": 90,
+        "poNumber": "PO001013",
+        "vendorID":3,
+        "category": "Hardware",
+        "price": 19.99
+    },
+    {
+        "productName": "Device N",
+        "quantity": 60,
+        "poNumber": "PO001014",
+        "vendorID":4,
+        "category": "Electronics",
+        "price": 49.99
+    },
+    {
+        "productName": "Tool O",
+        "quantity": 150,
+        "poNumber": "PO001015",
+        "vendorID":5,
+        "category": "Hardware",
+        "price": 22.99
+    },
+    {
+        "productName": "Gadget P",
+        "quantity": 70,
+        "poNumber": "PO001016",
+        "vendorID":1,
+        "category": "Accessories",
+        "price": 44.99
+    },
+    {
+        "productName": "Widget Q",
+        "quantity": 110,
+        "poNumber": "PO001017",
+        "vendorID":2,
+        "category": "Electronics",
+        "price": 34.99
+    }
+]

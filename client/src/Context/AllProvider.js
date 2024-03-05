@@ -1,24 +1,25 @@
-import React, { Children } from 'react'
-import CheckInProvider from './CheckIn/CheckInState'
+import React from 'react'
 import VendorProvider from './Vendor/VendorState'
 import VehicleProvider from './Vehicle/VehicleState'
 import ProductProvider from './Product/ProductState'
 import LoginProvider from './Login/LoginState'
+import CheckInState from './CheckIn/CheckInState'
 
-const AllProvider = () => {
+const AllProvider = ({ children }) => {
   return (
-    <CheckInProvider>
-      <VendorProvider>
-        <VehicleProvider>
-          <ProductProvider>
+    <CheckInState>
+      <ProductProvider>
+        <VendorProvider>
+          <VehicleProvider>
             <LoginProvider>
-              {Children}
+              {/* Wrap other providers as needed */}
+              {children}
             </LoginProvider>
-          </ProductProvider>
-        </VehicleProvider>
-      </VendorProvider>
-    </CheckInProvider>
-  )
-}
+          </VehicleProvider>
+        </VendorProvider>
+      </ProductProvider>
+    </CheckInState>
+  );
+};
 
 export default AllProvider

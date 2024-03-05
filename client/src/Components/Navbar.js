@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import img from '../Images/rsz_1desktop1.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate(); 
+    const handleLogout=()=>{
+        localStorage.removeItem('token');
+        navigate('/Login')
+    }
     const myStyle = {
         background: `url(${img})`,
         backgroundSize: "100% 420px",
@@ -13,7 +19,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <div style={myStyle}>
+            <div >
                 <div className='container'>
                     <nav className="navbar navbar-expand-lg ">
                         <div className="container-fluid">
@@ -36,14 +42,21 @@ const Navbar = () => {
                                         <Link className="nav-link" to={"/Product"}>Product</Link>
                                     </li>
                                 </ul>
-                                <ul className=" nav navbar-nav justify-content-end">
+
+                                {!localStorage.getItem('token') ? <ul className=" nav navbar-nav justify-content-end">
                                     <li className="nav-item">
                                         <Link className="nav-link " to="/Login">Login</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/Register">Register</Link>
                                     </li>
-                                </ul>
+                                </ul> :
+                                    <ul className=" nav navbar-nav justify-content-end">
+                                        <li className="nav-item">
+                                            <Link className="nav-link" onClick={handleLogout}>Logout</Link>
+                                        </li>
+                                    </ul>
+                                }
                             </div>
                         </div>
                     </nav>

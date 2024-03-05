@@ -1,0 +1,63 @@
+[
+    {
+      "vehicleNumber": "KA 01 AB 1234",
+      "dcNumber": "DC000001",
+      "poNumber": "PO000001",
+      "checkInDateTime": "2023-03-01T10:30:00.000Z",
+      "driverName": "John Doe",
+      "vehicleType": "Large",
+      "qualityCheck":"Approved",
+      "deliveryLocation": "CityA",
+      "vehicleImage": "https://robohash.org/sintessequaerat.png?size=50x50&set=set1",
+      "checkOutDateTime": "2023-03-10T16:45:00.000Z"
+    },
+    {
+      "vehicleNumber": "MH 02 XY 5678",
+      "dcNumber": "DC000002",
+      "poNumber": "PO000002",
+      "checkInDateTime": "2023-03-02T09:45:00.000Z",
+      "driverName": "Jane Smith",
+      "vehicleType": "Small",
+      "qualityCheck":"Approved",
+      "deliveryLocation": "CityB",
+      "vehicleImage": "https://robohash.org/temporibusporrolaboriosam.png?size=50x50&set=set1",
+      "checkOutDateTime": "2023-03-10T16:45:00.000Z"
+    },
+    {
+      "vehicleNumber": "DL 03 CD 9876",
+      "dcNumber": "DC000003",
+      "poNumber": "PO000003",
+      "checkInDateTime": "2023-03-03T12:15:00.000Z",
+      "driverName": "Bob Johnson",
+      "vehicleType": "Medium",
+      "qualityCheck":"Rejected",
+      "deliveryLocation": "CityC",
+      "vehicleImage": "https://robohash.org/laboriosamdolorepossimus.png?size=50x50&set=set1",
+      "checkOutDateTime": "2023-03-10T16:45:00.000Z"
+    },
+    {
+      "vehicleNumber": "TN 04 EF 5678",
+      "dcNumber": "DC000004",
+      "poNumber": "PO000004",
+      "checkInDateTime": "2023-03-04T15:30:00.000Z",
+      "driverName": "Alice Brown",
+      "vehicleType": "Medium",
+      "qualityCheck":"Pending",
+      "deliveryLocation": "CityD",
+      "vehicleImage": "https://robohash.org/ullamsuntet.png?size=50x50&set=set1",
+      "checkOutDateTime": "2023-03-10T16:45:00.000Z"
+    },
+    {
+      "vehicleNumber": "UP 05 GH 9876",
+      "dcNumber": "DC000005",
+      "poNumber": "PO000005",
+      "checkInDateTime": "2023-03-05T08:00:00.000Z",
+      "driverName": "Charlie Green",
+      "vehicleType": "Large",
+      "qualityCheck":"Approved",
+      "deliveryLocation": "CityE",
+      "vehicleImage": "https://robohash.org/utquirepudiandae.png?size=50x50&set=set1",
+      "checkOutDateTime": "2023-03-10T16:45:00.000Z"    
+    }
+  ]
+  

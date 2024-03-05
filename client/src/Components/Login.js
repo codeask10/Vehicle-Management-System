@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,16 +10,18 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import LoginContex from '../Context/Login/LoginContext';
 
 const defaultTheme = createTheme();
 
-
 const Login = () => {
+  const context=useContext(LoginContex);
+  const {userLogin}=context;
   const [data,setData]=useState({email:"",password:""});
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(data.email);
-    console.log(data.password);
+    userLogin(data);
+
   };
   const handleChange=(e)=>{
     setData({...data,[e.target.name]:e.target.value});

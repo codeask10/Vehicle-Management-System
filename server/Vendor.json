@@ -1,0 +1,47 @@
+[
+    {
+        "id":1,
+        "vendorName": "ABC Suppliers",
+        "companyName": "ABC Corporation",
+        "phone": "1234567890",
+        "email": "abc@supplier.com",
+        "dcNumber":"DC000123",
+        "address": "123 Main Street, CityA"
+    },
+    {
+        "id":2,
+        "vendorName": "XYZ Distributors",
+        "companyName": "XYZ Inc.",
+        "phone": "9876543210",
+        "email": "xyz@distributor.com",
+        "dcNumber":"DC000456",
+        "address": "456 Oak Avenue, CityB"
+    },
+    {
+        "id":3,
+        "vendorName": "LMN Wholesalers",
+        "companyName": "LMN Enterprises",
+        "phone": "1112223333",
+        "email": "lmn@wholesaler.com",
+        "dcNumber":"DC000789",
+        "address": "789 Elm Street, CityC"
+    },
+    {
+        "id":4,
+        "vendorName": "PQR Trading",
+        "companyName": "PQR Co.",
+        "phone": "4445556666",
+        "email": "pqr@trading.com",
+        "dcNumber":"DC000987",
+        "address": "987 Maple Avenue, CityD"
+    },
+    {
+        "id":5,
+        "vendorName": "EFG Exporters",
+        "companyName": "EFG Ltd.",
+        "phone": "7778889999",
+        "email": "efg@exporter.com",
+        "dcNumber":"DC000654",
+        "address": "654 Pine Street, CityE"
+    }
+]

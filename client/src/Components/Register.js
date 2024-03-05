@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,21 +10,23 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
+import LoginContex from '../Context/Login/LoginContext';
 const defaultTheme = createTheme();
 
 
 const Register = () => {
+  const context= useContext(LoginContex);
+  const{userRegister}=context;
   const [user, setUser]=useState({firstName:"",lastName:"",email:"",password:"",confirmPassword:""});
    const handleSubmit=(e)=>{
      e.preventDefault();
      if(user.password===user.confirmPassword){
-      console.log(user);
+      userRegister(user);
+      setUser({firstName: "",lastName:"", email: "", password: "", confirmPassword: ""});
      }
      else{
       alert("Does not match password");
      }
-     
-
    }
    const handleChange=(e)=>{
     setUser({...user,[e.target.name]:e.target.value});
