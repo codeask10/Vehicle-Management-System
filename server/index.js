@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 database();
+
 const addMockData = async () => {
     try {
       const vehicle = await Vehicle.find({});
