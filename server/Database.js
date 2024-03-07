@@ -3,9 +3,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoURL=process.env.REACT_APP_MONGOURL;
 console.log(mongoURL);
- const connectToMongoose=()=>{
+ const connectToMongoose=async()=>{
     
-mongoose.connect(
+ await mongoose.connect(
     mongoURL
   )
   .then(()=>console.log('connected'))
