@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 
 const defaultTheme = createTheme();
 
@@ -34,6 +35,7 @@ const Vendor = () => {
       setVendor({ id: "", vendorName: "", companyName: "", phone: "", email: "", dcNumber: "", address: "" });
     }
     else{
+      toast.warn("Please log in to access this feature.");
       navigate('/Login');
     }
   }

@@ -13,6 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 const defaultTheme = createTheme();
 
 const Vehicle = () => {
@@ -38,6 +39,7 @@ const Vehicle = () => {
       window.location.reload();
     }
     else {
+      toast.warn("Please log in to access this feature.");
       navigate('/Login');
     }
   }

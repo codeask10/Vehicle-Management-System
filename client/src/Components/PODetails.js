@@ -8,9 +8,10 @@ import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Unstable_Grid2';
+import {toast } from 'react-toastify';
+
 const PODetails = ({ vendorData, productDetails }) => {
   const [qualityCheck, setQualityCheck] = useState("");
-  
   const navigate = useNavigate();
   const theme = useMemo(
     () => createTheme({
@@ -65,10 +66,11 @@ const PODetails = ({ vendorData, productDetails }) => {
       body: JSON.stringify({ qualityCheck: qualityCheck })
     });
     setQualityCheck("");
+    toast.success("Quality check has been done");
     localStorage.setItem("checkOut", true);
   }
   else{
-    alert("Select the option for Quality Check");
+    toast.error("Select the option for Quality Check");
   }
   }
   const handleClickCheckOut = async () => {
@@ -83,11 +85,12 @@ const PODetails = ({ vendorData, productDetails }) => {
       },
       body: JSON.stringify({ checkOutDateTime: checkoutDateTime })
     });
+    toast.success("Check Out has been done");
     localStorage.removeItem('checkOut');
     localStorage.removeItem('checkIn');
     localStorage.removeItem('vehicleID');
     localStorage.removeItem('poNumber');
-    window.location.reload();
+    setTimeout(window.location.reload(),10000);
   }
   const handleChange = (e) => {
     setQualityCheck(e.target.value);

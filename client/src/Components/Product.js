@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 const defaultTheme = createTheme();
 
 
@@ -35,6 +36,7 @@ const handleSubmit=(e)=>{
     setProduct({productName:"", quantity:"", poNumber:"", category:"",vendorID:"", price:""})
   }
   else{
+    toast.warn("Please log in to access this feature.");
     navigate("/Login");
   }
 }

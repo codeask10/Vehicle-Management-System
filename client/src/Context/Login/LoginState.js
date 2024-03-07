@@ -1,6 +1,7 @@
 import React,{useState}from 'react'
 import LoginContext from './LoginContext';
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 
 const LoginState = (props) => {
     const navigate = useNavigate();
@@ -19,10 +20,10 @@ const LoginState = (props) => {
         if (json.success) {
             localStorage.setItem('token', json.authtoken);
             navigate('/');
-            alert("Account logged in successfully  ", "success")
+            toast.success("Account logged in successfully  ");
         }
         else {
-            alert("Invalid credential ", "danger")
+            toast.error("Invalid credential ");
 
         }
         setCredential(json);
@@ -40,10 +41,10 @@ const LoginState = (props) => {
         if (json.success) {
             localStorage.setItem('token', json.authtoken)
             navigate('/Login');
-            alert(" Account created successfully ", "success");
+            toast.success(" Account created successfully ");
         }
         else {
-            alert("Sorry a user with this email already exists", "danger")
+            toast.error("Sorry a user with this email already exists")
         }
     }
     return (

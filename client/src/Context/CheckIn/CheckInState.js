@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import CheckInContext from './CheckInContext';
+import {toast } from 'react-toastify';
 
 const CheckInState = (props) => {
   
@@ -19,6 +20,7 @@ const CheckInState = (props) => {
     console.log(json);
     setVendorData(json.vendorData);
     setProductDetails(json.productDetails);
+    
 }
   return (
     <CheckInContext.Provider value={{vendorData,productDetails, getQuery}}>

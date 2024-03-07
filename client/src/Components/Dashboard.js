@@ -15,6 +15,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PODetails from './PODetails';
 import VehicleContex from '../Context/Vehicle/VehicleContext';
 import CheckInContext from '../Context/CheckIn/CheckInContext';
+import {toast } from 'react-toastify';
+
 const defaultTheme = createTheme();
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -33,7 +35,6 @@ const Dashboard = () => {
   const [checkInForm, setCheckInForm] = useState({ vehicleNumber: "", dcNumber: "", poNumber: "", vehicleImageURL: "", checkInDateTime: "" })
   useEffect(()=>{
     if(localStorage.getItem('poNumber')){
-      console.log("first")
       const poNumber=localStorage.getItem('poNumber')+"";
       getQuery(poNumber)
     }
@@ -50,8 +51,10 @@ const Dashboard = () => {
       getQuery(checkInForm.poNumber);
       setCheckInForm({ vehicleNumber: "", dcNumber: "", poNumber: "", vehicleImageURL: "", checkInDateTime: "" });
       localStorage.setItem('poNumber',checkInForm.poNumber)
+      toast.success("successfully submitted");
     }
     else {
+      toast.warn("Please log in to access this feature.");
       navigate('/Login');
     }
   }

@@ -1,9 +1,12 @@
 import React,{useState}from 'react'
 import ProductContext from './ProductContext';
+import {toast } from 'react-toastify';
+
 
 const ProductState = (props) => {
-  const [productDetails, setProductDetails] = useState([]);
-    const host = 'http://localhost:5002'
+  const [productDetails,setProductDetails] = useState([]);
+    const host =process.env.REACT_APP_BASE_URL;
+    console.log(host);
     const getAllProducts = async () => {
         const response = await fetch(`${host}/api/product/fetchAllProduct`, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -16,7 +19,7 @@ const ProductState = (props) => {
         setProductDetails(json);
     }
     const createProduct = async (data) => {
-        const response = await fetch(`http://localhost:5002/api/product/create`, {
+        const response = await fetch(`${host}/api/product/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,7 +33,7 @@ const ProductState = (props) => {
     }
     const updateProduct = async (data) => {
       const id=data._id;
-      const response = await fetch(`http://localhost:5002/api/product/update/${id}`, {
+      const response = await fetch(`${host}/api/product/update/${id}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
@@ -40,9 +43,20 @@ const ProductState = (props) => {
       });
       // eslint-disable-next-line 
       const json = await response.json();  
+      if(json.success===true){
+        toast.success("Vehicle data updated successfully");
+      }
+      else{
+        if(json.success===false){
+            toast.error(json.message);
+        }
+        else{
+            toast.error(json);
+        }
+      } 
   }
   const deleteProduct= async (id) => {
-    const response = await fetch(`http://localhost:5002/api/product/delete/${id}`, {
+    const response = await fetch(`${host}/api/product/delete/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -51,6 +65,17 @@ const ProductState = (props) => {
     });
     // eslint-disable-next-line 
     const json = await response.json();  
+    if(json.success===true){
+        toast.success("Product has been deleted ");
+    }
+    else{
+        if(json.success===false){
+            toast.error(json.message);
+        }
+        else{
+            toast.error("Internal server error occured");
+        }
+    }
 }
     return (
         <ProductContext.Provider value={{ productDetails, getAllProducts,createProduct, updateProduct,deleteProduct }}>

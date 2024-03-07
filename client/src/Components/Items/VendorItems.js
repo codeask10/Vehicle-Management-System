@@ -20,6 +20,7 @@ const VendorItems = (props) => {
     }
     const handleDelete = () => {
         if (localStorage.getItem('token')) {
+            console.log("delete")
             deleteVendor(_id);
         }
         else {

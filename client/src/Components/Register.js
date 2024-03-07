@@ -11,6 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
 import LoginContex from '../Context/Login/LoginContext';
+import {toast } from 'react-toastify';
 const defaultTheme = createTheme();
 
 
@@ -25,7 +26,7 @@ const Register = () => {
       setUser({firstName: "",lastName:"", email: "", password: "", confirmPassword: ""});
      }
      else{
-      alert("Does not match password");
+      toast.error("Does not match password");
      }
    }
    const handleChange=(e)=>{

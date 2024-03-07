@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import VendorContext from './VendorContext';
+import {toast } from 'react-toastify';
 
 const VendorState = (props) => {
     const [vendorDetails, setVendorDetails] = useState([]);
-    const host = 'http://localhost:5002'
+    const host = process.env.REACT_APP_BASE_URL;
     const getAllVendor = async () => {
         const response = await fetch(`${host}/api/vendor/fetchAllVendor`, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -16,7 +17,7 @@ const VendorState = (props) => {
         setVendorDetails(json);
     }
     const createVendor = async (data) => {
-        const response = await fetch(`http://localhost:5002/api/vendor/create`, {
+        const response = await fetch(`${host}/api/vendor/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,11 +27,13 @@ const VendorState = (props) => {
         });
         // eslint-disable-next-line 
         const json = await response.json();
+        if(json.success){
+            toast.success("New Vendor data created successfully");
+        }
     }
     const updateVendor = async (data) => {
       const id=data._id;
-      console.log(id);
-      const response = await fetch(`http://localhost:5002/api/vendor/update/${id}`, {
+      const response = await fetch(`${host}/api/vendor/update/${id}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
@@ -40,9 +43,20 @@ const VendorState = (props) => {
       });
       // eslint-disable-next-line 
       const json = await response.json();  
+      if(json.success===true){
+        toast.success("Vendor data updated successfully");
+      }
+      else{
+        if(json.success===false){
+            toast.error(json.message);
+        }
+        else{
+            toast.error(json);
+        }
+      }
   }
   const deleteVendor = async (id) => {
-    const response = await fetch(`http://localhost:5002/api/vendor/delete/${id}`, {
+    const response = await fetch(`${host}/api/vendor/delete/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -51,6 +65,18 @@ const VendorState = (props) => {
     });
     // eslint-disable-next-line 
     const json = await response.json();  
+    if(json.success===true){
+        toast.success("Vendor has been deleted ");
+    }
+    else{
+        if(json.success===false){
+            toast.error(json.message);
+        }
+        else{
+            toast.error("Internal server error occured");
+        }
+    }
+
 }
     return (
         <VendorContext.Provider value={{ vendorDetails, getAllVendor,createVendor,updateVendor,deleteVendor}}>

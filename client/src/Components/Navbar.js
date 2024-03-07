@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import img from '../Images/rsz_1desktop1.jpg';
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 
 const Navbar = () => {
     const navigate = useNavigate(); 
     const handleLogout=()=>{
         localStorage.removeItem('token');
-        navigate('/Login')
+        navigate("/Login");
+        toast.success("Logout successfully");
     }
     const myStyle = {
         background: `url(${img})`,
