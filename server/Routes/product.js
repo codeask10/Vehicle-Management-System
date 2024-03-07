@@ -5,7 +5,7 @@ const Products=require('../Modal/Product')
 
 router.get("/fetchAllProduct",async (req, res) => {
     try {
-        const data = await Products.find({});
+        const data = await Products.find();
         res.json(data);
 
     } catch (error) {

@@ -6,7 +6,7 @@ const Vendor=require('../Modal/Vendor');
 
 router.get("/fetchAllVendor",async (req, res) => {
     try {
-        const data = await Vendor.find({});
+        const data = await Vendor.find();
         res.json(data);
 
     } catch (error) {

@@ -6,7 +6,7 @@ const Vehicles = require("../Modal/Vehicle");
 
 router.get("/fetchAllVehicle",async (req, res) => {
     try {
-        const data = await Vehicles.find({});
+        const data = await Vehicles.find();
         res.json(data);
 
     } catch (error) {
