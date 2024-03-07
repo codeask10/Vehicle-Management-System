@@ -6,7 +6,10 @@ console.log(mongoURL);
  const connectToMongoose=async()=>{
     
  await mongoose.connect(
-    mongoURL
+    mongoURL,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+     }
   )
   .then(()=>console.log('connected'))
   .catch(e=>console.log(e));
