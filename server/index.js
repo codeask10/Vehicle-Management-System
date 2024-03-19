@@ -34,7 +34,6 @@ const addMockData = async () => {
         await Vehicle.insertMany(vehicleData);
         await Vendor.insertMany(VendorData);
         await Product.insertMany(productData);
-        console.log('mock data added to MongoDB');
       }
     } catch (error) {
       console.error('Error populating database:', error);   

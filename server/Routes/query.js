@@ -8,7 +8,6 @@ const Vehicle=require('../Modal/Vehicle')
 router.get("/query/:id", fetchuser,async (req, res) => {
     let query =  await Products.findOne({ poNumber:  req.params.id})
     if(!query){return res.status(404).send("Not Found")}
-    console.log(query.vendorID);
     let vendorData=await Vendor.findOne({ id: query.vendorID});
     let productDetails=await Products.find({vendorID:query.vendorID});
     res.status(200).send({vendorData,productDetails});
